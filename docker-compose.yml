@@ -10,7 +10,7 @@ services:
   php:
     build:
       context: .
-      dockerfile: dockerfile/php.dockerfile
+      dockerfile: dockerfiles/php.dockerfile
     volumes:
       - ./src:/var/www/html
     
@@ -22,7 +22,7 @@ services:
   composer:
     build:
       context: .
-      dockerfile: dockerfile/composer.dockerfile
+      dockerfile: dockerfiles/composer.dockerfile
     volumes:
       - ./src:/var/www/html
 
