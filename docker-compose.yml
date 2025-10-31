@@ -29,5 +29,14 @@ services:
     volumes:
       - ./src:/var/www/html
 
+  artisan:
+    build:
+      context: .
+      dockerfile: dockerfiles/composer.dockerfile
+    volumes:
+      - ./src:/var/www/html
+    entrypoint: ["php", "/var/www/html/artisan"]
+   
+
     
   
