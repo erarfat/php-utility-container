@@ -32,7 +32,7 @@ services:
   artisan:
     build:
       context: .
-      dockerfile: dockerfiles/composer.dockerfile
+      dockerfile: dockerfiles/php.dockerfile
     volumes:
       - ./src:/var/www/html
     entrypoint: ["php", "/var/www/html/artisan"]
