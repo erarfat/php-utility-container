@@ -3,7 +3,7 @@ services:
   server:
     build:
       context: .
-      dockerfile: dockerfiles/niginx.dockerfile
+      dockerfile: dockerfiles/nginx.dockerfile
     # image: "nginx:1.29.2-alpine"
     # volumes:
     #   - ./src:/var/www/html
