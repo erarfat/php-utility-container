@@ -1,10 +1,13 @@
 version: "3.8"
 services:
   server:
-    image: "nginx:1.29.2-alpine"
-    volumes:
-      - ./src:/var/www/html
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    build:
+      context: .
+      dockerfile: dockerfiles/niginx.dockerfile
+    # image: "nginx:1.29.2-alpine"
+    # volumes:
+    #   - ./src:/var/www/html
+    #   - ./nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 80:80
     depends_on:
@@ -14,8 +17,8 @@ services:
     build:
       context: .
       dockerfile: dockerfiles/php.dockerfile
-    volumes:
-      - ./src:/var/www/html
+    # volumes:
+    #   - ./src:/var/www/html
     
   mysql:
     image: "mysql"
